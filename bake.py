@@ -39,6 +39,8 @@ BANNER = """
    자리를 잡아서 body 여백이 안 먹는다 — top 을 따로 밀어 준다. */
 body { padding-top: 30px; }
 .site-header { top: 30px !important; }
+/* 후원 버튼도 오른쪽 위에 붙박이라 띠와 닿는다. 그만큼 내려 준다. */
+.floating-support { top: calc(30px + 0.75rem) !important; }
 .preview-tag {
   position: fixed;
   z-index: 200;
