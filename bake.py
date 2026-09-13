@@ -9,7 +9,7 @@ fundraising-pub-page 저장소에 있고 거기서 고친다.
     npx wrangler dev --config dist/server/wrangler.json --port 8987
 
 그 다음:
-    python bake.py
+    python bake.py            (포트를 바꿨으면: python bake.py http://localhost:8991/)
 """
 
 import io
@@ -25,8 +25,10 @@ except AttributeError:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DIST = r'C:\Users\dbqke\fundraising-pub-page\site\dist\client'
-SERVER = 'http://localhost:8987/'
+# 원본은 두 곳에 클론돼 있다. 살아 있는 쪽은 원드라이브 폴더다 —
+# C:\Users\dbqke\fundraising-pub-page 는 뒤처진 사본이라 여기서 구우면 옛 화면이 나온다.
+DIST = r'C:\Users\dbqke\OneDrive\문서\ChatGPT\후원주점 페이지\site\dist\client'
+SERVER = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:8987/'
 OUT = os.path.join(HERE, 'docs')
 
 # 검토본임을 화면에 남긴다. 시민행동 이름이 붙은 채로 공개되는 자리라,
