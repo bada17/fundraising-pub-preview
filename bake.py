@@ -25,9 +25,8 @@ except AttributeError:
     pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-# 원본은 두 곳에 클론돼 있다. 살아 있는 쪽은 원드라이브 폴더다 —
-# C:\Users\dbqke\fundraising-pub-page 는 뒤처진 사본이라 여기서 구우면 옛 화면이 나온다.
-DIST = r'C:\Users\dbqke\OneDrive\문서\ChatGPT\후원주점 페이지\site\dist\client'
+# 여러 PC에서 같은 구조로 쓸 수 있게, 이 검토본 저장소와 나란히 받은 원본 저장소를 찾는다.
+DIST = os.path.join(os.path.dirname(HERE), 'fundraising-pub-page', 'site', 'dist', 'client')
 SERVER = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:8987/'
 OUT = os.path.join(HERE, 'docs')
 

@@ -9,6 +9,8 @@
 ## 다시 굽기
 
 원본 저장소 `site/` 안에서 빌드하고 서버를 띄운 뒤, 여기서 `bake.py` 를 돌린다.
+두 저장소는 같은 상위 폴더에 나란히 둔다. `bake.py`가 형제 폴더의
+`fundraising-pub-page/site/dist/client`를 자동으로 찾는다.
 
 ```
 npm run build
