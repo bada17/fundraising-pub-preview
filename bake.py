@@ -107,7 +107,9 @@ def main():
 
     # 밑줄로 시작하는 _next 를 지킬이 통째로 무시한다. 이 파일이 그것을 끈다.
     io.open(os.path.join(OUT, '.nojekyll'), 'w', encoding='utf-8').write('')
-    io.open(os.path.join(OUT, 'CNAME'), 'w', encoding='utf-8').write(DOMAIN + '\n')
+    # 깃허브가 스스로 쓰는 CNAME 에는 줄바꿈이 없다. 맞춰 두어야 설정 화면을
+    # 만진 뒤에 구워도 쓸데없는 차이가 안 생긴다.
+    io.open(os.path.join(OUT, 'CNAME'), 'w', encoding='utf-8').write(DOMAIN)
 
     left = re.findall(r'"/_next/', html)
     print('구운 곳:', OUT)
